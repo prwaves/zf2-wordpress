@@ -1,0 +1,51 @@
+{
+    "name": "Creative Pharmacist Platform",
+    "description": "CreativePharmacists new haul-over of their main platform for pharmacist/patient management",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "pharmacist"
+    ],
+    "homepage": "http://creativepharmacist.com/",
+
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "http://wpackagist.org"
+        },    
+        {
+          "type": "package",
+          "package": {
+            "name": "wordpress",
+            "type": "webroot",
+            "version": "3.8",
+            "dist": {
+              "type": "zip",
+              "url": "https://github.com/WordPress/WordPress/archive/3.8.1.zip"
+            },
+            "require" : {
+              "fancyguy/webroot-installer": "1.0.0"
+            }
+          }
+        }
+    ],    
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.*",
+        "propel/propel1": "1.6.9",
+        "wordpress": "3.8",
+        "fancyguy/webroot-installer": "1.0.0",
+        "wpackagist/wp-migrate-db": "*",
+        "wpackagist/user-role-editor": "*",
+        "wpackagist/root-cookie": "*"
+    },
+    "extra": {
+        "webroot-dir": "public/wp",
+        "webroot-package": "wordpress",
+        "installer-paths": {
+            "public/blog/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+   "autoload": {
+        "psr-0": {"Propel\\": "vendor/propel/propel1"}
+    } 
+}

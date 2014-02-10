@@ -1,0 +1,20 @@
+<?php
+
+$form = $this->form;
+$form->setAttribute('action', $this->serverUrl('/application/auth/authenticate'));
+$form->setAttribute('class', 'navbar-left navbar-form');
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+?>
+
+  <div class="form-group">
+    <?php echo $this->formElement($form->get('Username')); ?>
+    <?php echo $this->formElement($form->get('Password')); ?>
+  </div>
+  <?php echo $this->formSubmit($form->get('Submit')); ?>
+
+<!-- END MAIN IMAGE -->
+
+<?php echo $this->form()->closeTag(); ?>
